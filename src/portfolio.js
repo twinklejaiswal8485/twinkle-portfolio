@@ -26,7 +26,7 @@ const greeting = {
     "Full Stack Developer specializing in Next.js 15 and Creative UI/UX. Experienced in building scalable EdTech solutions and obsessed with Design Engineering principles. Turning complex requirements into seamless digital experiences—and providing the soundtrack to do it to. 🎧"
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1JU8euP73Eb6hP1yv1odSONCPYi2n78om/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1t3EloPELU3zUbQ3CjvgxCnCq_wftNZz3/view?usp=drive_link", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -191,18 +191,6 @@ const workExperiences = {
         "Engineered real-time monitoring workflows using Chart-base64 to visualize log data and diagnose service failures; utilized data-driven insights to optimize Next.js application performance and maintain high-fidelity stability across development environments."
       ]
     },
-    {
-      role: "Front-End Developer",
-      company: "Underrated Coder - EdTech Platform",
-      companylogo: require("./assets/images/underrated coder.webp"),
-      date: "Nov 2025 – Current",
-      desc: "Engineered a responsive, production-ready website using the Next.js stack; optimized core web vitals and system workflows to deliver a 99% performance rating and seamless user experience.",
-      descBullets: [
-        "Architecting a scalable EdTech storefront using Next.js 15 and TypeScript, leveraging Server Components and modular Shadcn UI for high-performance rendering.",
-        "Engineered a high-fidelity Creative UI/UX showcase by implementing Design Engineering principles and immersive storytelling elements with Framer Motion.",
-        "Optimizing core web vitals and metadata structures to achieve a 96% SEO score, significantly enhancing the platform's search indexing and user discoverability."
-      ]
-    },
     // {
     //   role: "Full Stack Developer",
     //   company: "Jethi Tech Solutions",
@@ -252,6 +240,17 @@ const bigProjects = {
         {
           name: "Visit Website",
           url: "https://the-chai-story.vercel.app/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/underrated coder.webp"),
+      projectName: "Underrated Coder",
+      projectDesc: "Engineered a responsive, production-ready EdTech platform using Next.js stack; optimized core web vitals and system workflows to deliver a 99% performance rating and seamless user experience.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://underratedcoder.com"
         }
       ]
     },
