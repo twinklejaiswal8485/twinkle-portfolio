@@ -6,16 +6,13 @@ import StyleContext from "../../contexts/StyleContext";
 import {
   greeting,
   workExperiences,
-  skillsSection,
-  openSource,
-  talkSection,
+  skillsSection
   // achievementSection
 } from "../../portfolio";
 
 function Header() {
   const {isDark} = useContext(StyleContext);
   const viewExperience = workExperiences.display;
-  const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
   // const viewAchievement = achievementSection.display;
   // const viewTalks = talkSection.display;
