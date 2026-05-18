@@ -26,7 +26,7 @@ const greeting = {
     "Full Stack Developer specializing in Next.js 15 and Creative UI/UX. Experienced in building scalable EdTech solutions and obsessed with Design Engineering principles. Turning complex requirements into seamless digital experiences—and providing the soundtrack to do it to. 🎧"
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1t3EloPELU3zUbQ3CjvgxCnCq_wftNZz3/view?usp=drive_link", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1yeEFsw_I2xcp-Fccq6NJOqJRJ48GGbzv/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
