@@ -1,7 +1,22 @@
-@import "../_globalColor";
+@import "../globalColor";
 
+// Dark mode root styles
 .dark-mode {
-  background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
+  background-color: $darkBg;
+  color: $textPrimary;
+}
+
+// Light mode root styles
+.light-mode {
+  background-color: $lightBg;
+  color: $textDarkPrimary;
+}
+
+// Section alternate backgrounds
+.dark-mode {
+  .section-alt { background: $darkBg2; }
+}
+
+.light-mode {
+  .section-alt { background: $lightBg3; }
 }

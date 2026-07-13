@@ -1,30 +1,108 @@
 @import "./globalColor";
 
-.App {
-  text-align: center;
-  width: 100%;
-  overflow-x: hidden;
+/* ─── Global Keyframes ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
 }
 
-.App-logo {
-  height: 40vmin;
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(124, 58, 237, 0.6), 0 0 80px rgba(124, 58, 237, 0.2); }
 }
 
-.App-header {
-  background-color: $appHeaderBG;
-  min-height: 100vh;
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes orb-move-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.97); }
+}
+
+@keyframes orb-move-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.08); }
+  66% { transform: translate(30px, -20px) scale(0.95); }
+}
+
+@keyframes slide-in-top {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes progress-fill {
+  from { width: 0; }
+}
+
+/* ─── Dark Mode (body class toggle) ─── */
+body.dark-mode {
+  background-color: #08080f;
+  color: #f8fafc;
+}
+
+body:not(.dark-mode) {
+  background-color: #f8f7ff;
+  color: #0f172a;
+}
+
+/* ─── Section alternating backgrounds ─── */
+.section-dark {
+  background-color: var(--color-bg);
+}
+
+.section-alt {
+  background: var(--color-bg2);
+}
+
+/* ─── Gradient line decorators ─── */
+.gradient-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $primary, $accent, transparent);
+  border: none;
+  margin: 0;
+}
+
+/* ─── Top scroll button overrides ─── */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $primary, $accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(0.625rem + 2vmin);
-  color: $textColorDark;
-}
+  font-size: 1.2rem;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 999;
 
-.App-link {
-  color: $appLink;
-}
-
-.subTitle {
-  color: $subTitle;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.6);
+  }
 }

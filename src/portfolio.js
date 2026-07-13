@@ -23,7 +23,7 @@ const greeting = {
   username: "Twinkle Jaiswal",
   title: "Twinkle here",
   subTitle: emoji(
-    "Full Stack Developer specializing in Next.js 15 and Creative UI/UX. Experienced in building scalable EdTech solutions and obsessed with Design Engineering principles. Turning complex requirements into seamless digital experiences—and providing the soundtrack to do it to. 🎧"
+    "Full Stack Developer specializing in Next.js 15 and Creative UI/UX. Experienced in building scalable EdTech solutions and obsessed with Design Engineering principles. Turning complex requirements into seamless digital experiences."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1yeEFsw_I2xcp-Fccq6NJOqJRJ48GGbzv/view?usp=sharing", // Set to empty to hide the button
@@ -50,13 +50,13 @@ const skillsSection = {
     "FULL STACK DEVELOPER, OPEN TO LEARNING NEW TECHNOLOGIES AND BUILDING PROJECTS",
   skills: [
     emoji(
-      "⚡Full Stack Developer & Design Engineer with a focus on high-performance web architectures. Specialist in Next.js 15, TypeScript, and Framer Motion, with a track record of building scalable EdTech platforms and creative UI/UX showcases."
+      "Full Stack Developer & Design Engineer with a focus on high-performance web architectures. Specialist in Next.js 15, TypeScript, and Framer Motion, with a track record of building scalable EdTech platforms and creative UI/UX showcases."
     ),
     emoji(
-      "⚡ Currently exploring the intersection of AI optimization (LoRA/Quantization) and immersive storytelling."
+      "Currently exploring the intersection of AI optimization (LoRA/Quantization) and immersive storytelling."
     ),
     emoji(
-      "⚡ Trying my hands on new projects and collaborating with others to increase my knowledge horizons"
+      "Actively building new projects and collaborating with others to expand knowledge and craft."
     )
   ],
 

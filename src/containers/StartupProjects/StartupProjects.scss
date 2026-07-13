@@ -1,90 +1,233 @@
-@import "../../_globalColor";
+@import "../../globalColor";
 
-.card-image {
-  max-width: 100%;
-  height: auto;
-  width: 250px;
+.projects-section {
+  background: var(--color-bg, $darkBg);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.3), transparent);
+  }
 }
-.card-title {
-  color: $titleColor;
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 700;
-  margin: 15px 0 0 0;
+
+.projects-header {
+  margin-bottom: 56px;
 }
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 17px;
-  line-height: 1.5rem;
+
+/* ─── Projects Grid ─── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
-.project-card {
+
+/* ─── Bento Card ─── */
+.bento-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radiusXl;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: rgba(124, 58, 237, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(124, 58, 237, 0.15);
+
+    .bento-image {
+      transform: scale(1.04);
+    }
+
+    .bento-overlay {
+      opacity: 0.7;
+    }
+  }
+
+  .light-mode & {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.06);
+
+    &:hover {
+      border-color: rgba(124, 58, 237, 0.2);
+      box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
+    }
+  }
+}
+
+/* ─── Normal Card ─── */
+.bento-normal {
   display: flex;
   flex-direction: column;
-  background-color: $lightBackground2;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-  justify-content: center;
-}
-.project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  height: 100%;
+
+  .bento-image-wrap {
+    height: 160px;
+  }
 }
 
-.project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.25s ease;
-}
-
-.project-detail {
-  text-align: center;
-}
-.project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-.project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
-}
-.project-image {
+/* ─── Image ─── */
+.bento-image-wrap {
   position: relative;
-  height: 250px;
   overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 8, 15, 0.9) 0%, rgba(8, 8, 15, 0.4) 50%, transparent 100%);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* ─── Content ─── */
+.bento-content {
+  padding: 24px;
+  flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bento-top {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
-}
-
-.project-card-footer span.project-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
-  vertical-align: middle;
-  align-items: center;
-  border-radius: 4px;
-  display: inline-flex;
-  font-size: 0.75rem;
-  height: 2em;
-  justify-content: center;
+.bento-emoji {
+  font-size: 0.6rem;
+  font-family: $fontMono;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $primaryLight;
+  padding: 3px 7px;
+  background: rgba(139, 92, 246, 0.12);
+  border-radius: $radiusSm;
+  border: 1px solid rgba(139, 92, 246, 0.22);
   white-space: nowrap;
-  line-height: 1.5;
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 0 0.75em;
-  cursor: pointer;
-  transition: 0.2s ease-in;
 }
 
-@media (max-width: 768px) {
-  .project-subtitle {
-    font-size: 16px;
-    text-align: center;
+.bento-link-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: $radiusMd;
+  color: $primaryLight;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    background: $primary;
+    color: #fff;
+    border-color: $primary;
+    transform: scale(1.1);
+  }
+}
+
+.bento-name {
+  font-family: $fontDisplay;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.2;
+
+  .light-mode & {
+    color: #0f172a;
+  }
+}
+
+.bento-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+
+.bento-desc-short {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Tags ─── */
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bento-tag {
+  padding: 3px 10px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: $radiusFull;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(168, 85, 247, 0.85);
+  font-family: $fontMono;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: rgba(124, 58, 237, 0.15);
+    border-color: var(--tag-color, rgba(124, 58, 237, 0.4));
+    color: var(--tag-color, $primaryLight);
+  }
+}
+
+/* ─── CTA ─── */
+.bento-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: $gradientPrimary;
+  color: #fff;
+  border-radius: $radiusFull;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  margin-top: 4px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
   }
 }

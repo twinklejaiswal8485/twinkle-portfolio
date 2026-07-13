@@ -1,23 +1,42 @@
 .splash-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  justify-content: center;
+  background: #08080f;
+  gap: 24px;
 }
 
 .splash-animation-container {
-  height: 50vh;
+  width: 200px;
+  height: 200px;
 }
 
 .splash-title-container {
-  font-size: 2.5rem;
-  text-decoration: none;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  animation: fadeIn 0.6s ease 0.5s both;
 }
+
 .splash-title {
-  font-family: "Agustina Regular", cursive;
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 20px;
+  color: #f8fafc;
+  margin: 0 4px;
+}
+
+.grey-color {
+  background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -1,0 +1,271 @@
+@import "../../globalColor";
+
+.about-section {
+  background: var(--color-bg2, $darkBg2);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.3), transparent);
+  }
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* ─── Left Text ─── */
+.about-text-col {
+  .section-title {
+    margin-bottom: 24px;
+  }
+}
+
+.about-bio {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+
+  strong {
+    color: $primaryLight;
+    font-weight: 600;
+  }
+
+  .light-mode & {
+    color: #475569;
+
+    strong {
+      color: $primaryDark;
+    }
+  }
+}
+
+/* ─── Tags ─── */
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.about-tag {
+  padding: 5px 14px;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: $radiusFull;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $primaryLight;
+  font-family: $fontMono;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(124, 58, 237, 0.2);
+    border-color: rgba(124, 58, 237, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .light-mode & {
+    color: $primaryDark;
+    background: rgba(124, 58, 237, 0.07);
+  }
+}
+
+/* ─── About CTAs ─── */
+.about-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.about-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: $gradientPrimary;
+  color: #fff;
+  border-radius: $radiusFull;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.5);
+  }
+}
+
+.about-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+  border-radius: $radiusFull;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  .light-mode & {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #0f172a;
+  }
+
+  &:hover {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: rgba(124, 58, 237, 0.3);
+    color: $primaryLight;
+    transform: translateY(-2px);
+  }
+}
+
+/* ─── Stats Grid ─── */
+.about-stats-col {}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: $radiusLg;
+  padding: 28px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: default;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.06) 0%, rgba(6, 182, 212, 0.06) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    border-color: rgba(124, 58, 237, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(124, 58, 237, 0.1);
+
+    &::before { opacity: 1; }
+  }
+
+  .light-mode & {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.06);
+
+    &:hover {
+      border-color: rgba(124, 58, 237, 0.2);
+      box-shadow: 0 12px 40px rgba(124, 58, 237, 0.12);
+    }
+  }
+}
+
+.stat-card-icon {
+  font-size: 0.65rem;
+  font-family: $fontMono;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $primaryLight;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  background: rgba(139, 92, 246, 0.12);
+  border-radius: $radiusSm;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  display: inline-block;
+
+  .light-mode & {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.18);
+  }
+}
+
+.stat-card-num {
+  font-family: $fontDisplay;
+  font-size: 2rem;
+  font-weight: 800;
+  background: $gradientText;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-card-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* ─── Philosophy Card ─── */
+.philosophy-card {
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  border-radius: $radiusLg;
+  padding: 28px;
+  position: relative;
+
+  .light-mode & {
+    background: rgba(124, 58, 237, 0.04);
+    border-color: rgba(124, 58, 237, 0.12);
+  }
+}
+
+.philosophy-quote {
+  font-size: 4rem;
+  font-family: Georgia, serif;
+  line-height: 0.8;
+  margin-bottom: 16px;
+  background: $gradientText;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.philosophy-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.philosophy-author {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: $primaryLight;
+  font-family: $fontMono;
+}
