@@ -239,7 +239,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://the-chai-story.vercel.app/"
+          url: "https://modern-tea.vercel.app/"
         }
       ]
     },

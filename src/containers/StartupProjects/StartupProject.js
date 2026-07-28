@@ -13,17 +13,7 @@ const projects = [
     size: "featured",
     emoji: "NOV",
   },
-  {
-    id: "chaistory",
-    name: "Chai Story",
-    desc: "Story-telling chai website with creative animations built with Framer Motion and Shadcn UI. Seamless motion-driven storytelling with optimized performance.",
-    tags: ["Next.js", "Framer Motion", "Shadcn UI"],
-    url: "https://the-chai-story.vercel.app/",
-    image: require("../../assets/images/chaistory.png"),
-    color: "#f59e0b",
-    size: "normal",
-    emoji: "CHI",
-  },
+  
   {
     id: "underrated-coder",
     name: "Underrated Coder",
@@ -34,6 +24,29 @@ const projects = [
     color: "#06b6d4",
     size: "normal",
     emoji: "UCR",
+  },
+
+  {
+    id: "ai-trip-planner",
+    name: "Ai-trip-planner",
+    desc: "AI Trip Planner takes the hassle out of vacation planning. Powered by Google's Gemini AI, Next.js, and Supabase, the app generates custom, structured travel itineraries tailored to your specific destination, trip duration, group size, and budget—complete with curated activities, locations, and cost estimates.",
+    tags: ["Next.js", "Framer Motion", "Shadcn UI"],
+    url: "https://wander-ai-theta.vercel.app/",
+    image: require("../../assets/images/wander ai.webp"),
+    color: "#f59e0b",
+    size: "normal",
+    emoji: "TRIP",
+  },
+  {
+    id: "assamstory",
+    name: "Assam Story",
+    desc: "Story-telling chai website with creative animations built with Framer Motion and Shadcn UI. Seamless motion-driven storytelling with optimized performance.",
+    tags: ["Next.js", "Framer Motion", "Shadcn UI"],
+    url: "https://modern-tea.vercel.app/",
+    image: require("../../assets/images/assam_tea.webp"),
+    color: "#f59e0b",
+    size: "normal",
+    emoji: "CHI",
   },
 ];
 
